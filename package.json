@@ -1,0 +1,11 @@
+{
+  "name": "duet-project-site",
+  "private": true,
+  "description": "정적 페이지 — 저장 시 브라우저 자동 새로고침: npm run dev",
+  "scripts": {
+    "dev": "live-server --port=8787 --open=/index.html"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
