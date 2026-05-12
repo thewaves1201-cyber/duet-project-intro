@@ -421,7 +421,7 @@ a {
   height: 100vh;
   height: 100svh;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -594,8 +594,8 @@ a {
 
 @media (min-width: 1081px) {
   .snap-slide--cover .cover-actions .btn {
-    font-size: 0.8rem;
-    padding: 1.05rem 1.85rem;
+    font-size: 0.7rem;
+    padding: 0.75rem 1.45rem;
   }
 }
 
@@ -2273,6 +2273,7 @@ a {
   top: 4%;
   right: 3%;
   border-color: rgba(46, 231, 255, 0.34);
+  min-height: 158px;
 }
 
 .structure-node--dist {
@@ -2292,6 +2293,10 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.35);
+}
+
+.structure-node-nowrap {
+  white-space: nowrap;
 }
 
 .keyword-row--structure {
@@ -2428,8 +2433,8 @@ a {
 }
 
 .ip-platform-thumb--phone {
-  width: min(100%, 178px);
-  max-height: clamp(180px, 25vh, 285px);
+  width: min(100%, 210px);
+  max-height: clamp(220px, 31vh, 340px);
 }
 
 .ip-platform-card--phone {
@@ -3551,16 +3556,17 @@ a {
 
   .cover-actions {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     width: 100%;
-    max-width: 22rem;
+    max-width: 100%;
   }
 
   .cover-actions .btn {
-    width: 100%;
-    max-width: none;
-    min-height: 48px;
-    font-size: 0.7rem;
+    width: min(100%, 15.5rem);
+    max-width: 15.5rem;
+    min-height: 38px;
+    font-size: 0.58rem;
+    padding: 0.42rem 0.95rem;
   }
 
   .snap-slide__scroll--cover {
@@ -3637,13 +3643,13 @@ a {
 
 @media (max-width: 720px) {
   html {
-    scroll-snap-type: none;
+    scroll-snap-type: y proximity;
   }
 
   .section.snap-slide {
     min-height: 0;
     height: auto;
-    scroll-snap-align: none;
+    scroll-snap-align: start;
     scroll-snap-stop: normal;
   }
 
@@ -3669,7 +3675,8 @@ a {
   }
 
   .snap-slide > .snap-slide__scroll {
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: visible;
     padding-block: calc(var(--header-h) + 8px) max(1.5rem, env(safe-area-inset-bottom, 0px));
   }
 
@@ -4010,6 +4017,15 @@ a {
   .nav-panel {
     inset: var(--header-h) 0 0 0;
     padding-top: 0.9rem;
+  }
+
+  .cover-actions {
+    max-width: 100%;
+  }
+
+  .cover-actions .btn {
+    width: min(100%, 14.25rem);
+    max-width: 14.25rem;
   }
 
   .cover-title-line {
